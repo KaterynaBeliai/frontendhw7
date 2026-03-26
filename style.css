@@ -1,0 +1,130 @@
+/*box model */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+}
+
+/*positioning */
+.main-header {
+    position: sticky; /*sticky */
+    top: 0;
+    background: #fff;
+    z-index: 1000;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-wrapper {
+    position: relative; /*relative */
+}
+
+.cart-badge {
+    position: absolute; /*absolute */
+    top: -8px;
+    right: -10px;
+    background: #5b67ca;
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 50%;
+}
+
+/* flex grid*/
+.header-container, .hero-container, .hero-actions, .features-grid, .footer-bottom-row {
+    display: flex;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+/*mobile*/
+.hero-container {
+    flex-direction: column; /* Mobile first */
+    padding: 40px 5%;
+    text-align: center;
+}
+
+.hero-content h1 { font-size: 32px; margin-bottom: 15px; }
+.accent-color { color: #5b67ca; }
+
+.features-grid {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px 0;
+}
+
+.feature-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.products-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px 5%;
+}
+
+/*dekstop */
+@media (min-width: 768px) {
+    .hero-container {
+        flex-direction: row;
+        text-align: left;
+        padding: 80px 5%;
+    }
+    .hero-content { flex: 1; }
+    .hero-image-box { flex: 1; }
+    
+    .features-grid {
+        flex-direction: row;
+    }
+    .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/*selectors */
+#special-bg.features-section { /*together id and claass */
+    padding: 60px 0;
+}
+
+.footer-container .subscribe-block { /* Combined selector */
+    background-color: #5b67ca;
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.benefit-list {
+    margin-top: 15px;
+    list-style: inside;
+    font-size: 13px;
+}
+
+.sub-form {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.footer-bottom-row {
+    background: #000;
+    color: white;
+    padding: 20px 5%;
+    justify-content: space-between;
+}
